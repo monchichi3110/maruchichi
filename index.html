@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Single Column Web Page</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<div id="wrap">
+	<header>
+		<h1><a href="index.html">Site Title</a></h1>
+
+		<input type="checkbox" id="navBtn">  
+		<label for="navBtn" class="open"><span></span></label>
+
+		<nav>
+			<ul>
+				<li><a href="index.html">HOME</a></li>
+				<li><a href="about.html">ABOUT</a></li>
+				<li><a href="works.html">WORKS</a></li>
+				<li><a href="contact.html">CONTACT</a></li>
+			</ul>
+		</nav>
+		<picture>
+		  <source media="(max-width: 599px)" srcset="images/square.png">
+		  <source media="(min-width: 600px)" srcset="images/main-visual.png">
+		  <img src="images/main-visual.png" alt="メインビジュアル">
+		</picture>
+	</header>
+
+	<main>
+		<section class="sec01">
+			<h2>セクション1</h2>
+			<p>ここにコンテンツが入ります。</p>
+		</section>
+		<section class="sec02">
+			<h2>セクション2</h2>
+			<p>さらにコンテンツが入ります。</p>
+		</section>
+		<section class="sec03">
+			<div class="container">
+				<img src="images/square.png" alt="">
+				<img src="images/square.png" alt="">
+				<img src="images/square.png" alt="">
+				<img src="images/square.png" alt="">
+				<img src="images/square.png" alt="">
+				<img src="images/square.png" alt="">
+			</div>
+		</section>
+	</main>
+
+	<footer>
+		<p>© My Site </p>
+	</footer>
+</div>
+</body>
+
+</html>
