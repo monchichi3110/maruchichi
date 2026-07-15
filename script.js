@@ -5,17 +5,24 @@ const dots = document.querySelector(".dots");
 
 let current = 0;
 
-// ドット生成
 slides.forEach((_, i) => {
   const dot = document.createElement("span");
-  if(i === 0) dot.classList.add("active");
-  dot.addEventListener("click", () => showSlide(i));
+
+  if(i === 0){
+    dot.classList.add("active");
+  }
+
+  dot.addEventListener("click", () => {
+    showSlide(i);
+  });
+
   dots.appendChild(dot);
 });
 
 const dotList = document.querySelectorAll(".dots span");
 
 function showSlide(index){
+
   slides[current].classList.remove("active");
   dotList[current].classList.remove("active");
 
@@ -25,15 +32,14 @@ function showSlide(index){
   dotList[current].classList.add("active");
 }
 
-next.onclick = () => {
+next.addEventListener("click", () => {
   showSlide((current + 1) % slides.length);
-};
+});
 
-prev.onclick = () => {
+prev.addEventListener("click", () => {
   showSlide((current - 1 + slides.length) % slides.length);
-};
+});
 
-// 3秒ごとに自動再生
 setInterval(() => {
   showSlide((current + 1) % slides.length);
 }, 3000);
