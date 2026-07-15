@@ -1,45 +1,56 @@
-const slides = document.querySelectorAll(".slide");
-const prev = document.querySelector(".prev");
-const next = document.querySelector(".next");
-const dots = document.querySelector(".dots");
+const images =
+document.querySelectorAll(".carousel-img");
 
 let current = 0;
 
-slides.forEach((_, i) => {
-  const dot = document.createElement("span");
+function updateCarousel(){
 
-  if(i === 0){
-    dot.classList.add("active");
-  }
-
-  dot.addEventListener("click", () => {
-    showSlide(i);
+  images.forEach(img=>{
+    img.classList.remove("center","side");
+    img.style.display = "none";
   });
 
-  dots.appendChild(dot);
-});
+  const prev =
+  (current - 1 + images.length) % images.length;
 
-const dotList = document.querySelectorAll(".dots span");
+  const next =
+  (current + 1) % images.length;
 
-function showSlide(index){
+  images[prev].style.display = "block";
+  images[current].style.display = "block";
+  images[next].style.display = "block";
 
-  slides[current].classList.remove("active");
-  dotList[current].classList.remove("active");
-
-  current = index;
-
-  slides[current].classList.add("active");
-  dotList[current].classList.add("active");
+  images[prev].classList.add("side");
+  images[current].classList.add("center");
+  images[next].classList.add("side");
 }
 
-next.addEventListener("click", () => {
-  showSlide((current + 1) % slides.length);
+document.querySelector(".right")
+.addEventListener("click",()=>{
+
+  current =
+  (current + 1) % images.length;
+
+  updateCarousel();
 });
 
-prev.addEventListener("click", () => {
-  showSlide((current - 1 + slides.length) % slides.length);
+document.querySelector(".left")
+.addEventListener("click",()=>{
+
+  current =
+  (current - 1 + images.length)
+  % images.length;
+
+  updateCarousel();
 });
 
-setInterval(() => {
-  showSlide((current + 1) % slides.length);
-}, 3000);
+setInterval(()=>{
+
+  current =
+  (current + 1) % images.length;
+
+  updateCarousel();
+
+},3000);
+
+updateCarousel();
