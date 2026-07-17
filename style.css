@@ -254,11 +254,7 @@ footer {
 }
 
 .carousel{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:20px;
-  margin:150px auto 60px;
+  gap:80px;
 }
 
 .carousel-container{
@@ -267,26 +263,19 @@ footer {
   align-items:center;
   width:100%;
   max-width:900px;
-  overflow:hidden;
+  overflow:visible;
 }
 
 .carousel-img{
-  width:180px;
-  height:250px;
-  object-fit:cover;
-  border-radius:20px;
-  margin:0 -20px;
-  opacity:.4;
-  transform:scale(.75);
-  transition:.5s;
+  width:150px;
+  height:210px;
+  object-fit:contain;
+  margin:0;
 }
 
 .carousel-img.center{
-  width:320px;
-  height:420px;
-  opacity:1;
-  transform:scale(1);
-  z-index:3;
+  width:260px;
+  height:340px;
 }
 
 .carousel-img.side{
