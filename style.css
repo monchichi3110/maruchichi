@@ -11,7 +11,7 @@
 img {
   width: 100%;
   height: auto;
-  vertical-align: bottom;
+  object-fit: contain;
 }
 
 body {
@@ -322,4 +322,7 @@ footer {
 
 .intro{
   background: transparent !important;
+}
+.about {
+  background: transparent;
 }
