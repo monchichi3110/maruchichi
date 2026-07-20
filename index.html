@@ -7,58 +7,73 @@
 	<title>Single Column Web Page</title>
 	<link rel="stylesheet" href="style.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
 </head>
 
 <body>
 	<div id="wrap">
-	<header>
-		<h1><a href="index.html">Site Title</a></h1>
+		<header>
+			<h1><a href="index.html">Site Title</a></h1>
 
-		<input type="checkbox" id="navBtn">  
-		<label for="navBtn" class="open"><span></span></label>
+			<input type="checkbox" id="navBtn">  
+			<label for="navBtn" class="open"><span></span></label>
 
-		<nav>
-			<ul>
-				<li><a href="index.html">HOME</a></li>
-				<li><a href="about.html">ABOUT</a></li>
-				<li><a href="works.html">WORKS</a></li>
-				<li><a href="contact.html">CONTACT</a></li>
-			</ul>
-		</nav>
-		<picture>
-		  <source media="(max-width: 599px)" srcset="images/square.png">
-		  <source media="(min-width: 600px)" srcset="images/main-visual.png">
-		  <img src="tyairo.jpg" alt="メインビジュアル">
-		</picture>
-	</header>
+			<nav>
+				<ul>
+					<li><a href="index.html">HOME</a></li>
+					<li><a href="about.html">ABOUT</a></li>
+					<li><a href="works.html">WORKS</a></li>
+					<li><a href="contact.html">CONTACT</a></li>
+				</ul>
+			</nav>
+			<picture>
+				<source media="(max-width: 599px)" srcset="images/square.png">
+				<source media="(min-width: 600px)" srcset="images/main-visual.png">
+				<img src="tyairo.jpg" alt="メインビジュアル">
+			</picture>
+		</header>
 
-	<main>
-		<section class="carousel">
+		<main>
+			<!-- カルーセルエリア -->
+			<section class="carousel">
+				<button class="arrow left">&#10094;</button>
+				<div class="slider4">
+					<div><img src="images/photo1.png" class="carousel-img"></div>
+					<div><img src="images/photo2.png" class="carousel-img"></div>
+					<div><img src="images/photo3.png" class="carousel-img"></div>
+					<div><img src="images/photo4.png" class="carousel-img"></div>
+					<div><img src="images/photo5.png" class="carousel-img"></div>
+					<div><img src="images/photo6.png" class="carousel-img"></div>
+					<div><img src="images/photo7.png" class="carousel-img"></div>
+					<div><img src="images/photo8.png" class="carousel-img"></div>
+					<div><img src="images/photo9.png" class="carousel-img"></div>
+					<div><img src="images/photo10.png" class="carousel-img"></div>
+				</div>
+				<button class="arrow right">&#10095;</button>
+			</section>
 
-  <button class="arrow left">&#10094;</button>
-  
-  <div class="slider4">
-        <div><img src="images/photo1.png" class="carousel-img"></div>
-        <div><img src="images/photo2.png" class="carousel-img"></div>
-        <div><img src="images/photo3.png" class="carousel-img"></div>
-        <div><img src="images/photo4.png" class="carousel-img"></div>
-        <div><img src="images/photo5.png" class="carousel-img"></div>
-        <div><img src="images/photo6.png" class="carousel-img"></div>
-        <div><img src="images/photo7.png" class="carousel-img"></div>
-        <div><img src="images/photo8.png" class="carousel-img"></div>
-        <div><img src="images/photo9.png" class="carousel-img"></div>
-		<div><img src="images/photo10.png" class="carousel-img"></div>
-      </div>
+			<div class="dots"></div>
 
-  <button class="arrow right">&#10095;</button>
+			<!-- 紹介テキストエリア（CSSの.introにより真ん中になります） -->
+			<section class="intro">
+				<h2>Mariishi Itsuki</h2>
+				<p>Portfolio Site</p>
+			</section>
 
-</section>
+			<section class="intro">
+				<h2>好きなものを、<br>自分らしいかたちで。</h2>
+			</section>
+		</main>
 
-  <div class="dots"></div>
-<main>
+		<footer>
+			<p>© My Site </p>
+		</footer>
+	</div>
+	<script src="script.js"></script>
+</body>
 
+</html>
   <section class="carousel">
     ...
   </section>

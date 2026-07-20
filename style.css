@@ -212,11 +212,13 @@ footer {
   }
 }
 
-/* イントロダクション（重複を統合） */
+/* イントロダクション（文字を中央揃えにする設定） */
 .intro {
+  display: block;
   background: transparent !important;
   text-align: center;
-  padding: 120px 20px;
+  padding: 40px 20px; /* 余白を少し調整して見やすくしました */
+  width: 100%;
 }
 
 .intro h2 {
@@ -225,11 +227,13 @@ footer {
   line-height: 2;
   letter-spacing: .1em;
   color: #472b16;
+  text-align: center;
 }
 
 .intro p {
   font-size: 1rem;
   letter-spacing: 0.15em;
+  text-align: center;
 }
 
 /* ==============================================
@@ -241,20 +245,17 @@ footer {
   align-items: center;
   gap: 40px;
   background: transparent !important;
-  overflow: hidden; /* はみ出た画像を隠す */
+  overflow: hidden;
   width: 100%;
 }
 
-/* スライダーの画像を1列に並べて動かすための枠 */
 .slider4 {
-  display: flex;
   display: flex;
   transition: transform 0.5s ease-in-out;
   width: 100%;
   max-width: 900px;
 }
 
-/* 画像1枚ずつの親要素（1枚表示させる場合の設定） */
 .slider4 > div {
   min-width: 100%; 
   display: flex;
@@ -264,26 +265,25 @@ footer {
 
 .carousel-img {
   width: 100%;
-  max-width: 600px; /* 画像が大きすぎないように最大幅を設定 */
+  max-width: 600px;
   height: auto;
   object-fit: contain;
   margin: 0;
 }
 
-/* 矢印ボタン */
 .arrow {
   background: none;
   border: none;
   font-size: 40px;
   cursor: pointer;
-  color: #472b16; /* 矢印の色を見やすい茶色に */
+  color: #472b16;
   z-index: 10;
 }
 
-/* ドットナビゲーション */
 .dots {
   text-align: center;
   margin-top: 15px;
+  width: 100%;
 }
 
 .dots span {
