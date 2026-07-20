@@ -15,14 +15,11 @@ img {
 }
 
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: "Zen Maru Gothic", 'Arial', sans-serif;
   line-height: 1.6;
   color: #422610;
   height: 100%;
   background: url(images/h.png);
- body{
-  font-family: "Zen Maru Gothic", sans-serif;
-}
 }
 
 #wrap {
@@ -33,7 +30,6 @@ body {
 }
 
 /* header */
-
 header {
   position: relative;
 }
@@ -65,8 +61,7 @@ header h1 a {
   border-radius: 2px;
 }
 
-/*humburger button*/
-
+/* humburger button */
 .open::before,
 .open::after {
   content: "";
@@ -92,7 +87,7 @@ header h1 a {
   transform: translateY(8px);
 }
 
-/*close button*/
+/* close button */
 #navBtn:checked + .open {
   background: #555;
 }
@@ -116,7 +111,6 @@ header h1 a {
 }
 
 nav {
-  /* display: none; */
   height: 100vh;
   width: 300px;
   position: absolute;
@@ -139,7 +133,6 @@ nav ul {
 }
 
 nav ul li {
-  /* display: inline-block; */
   margin: 0 10px;
   padding: 10px 0;
 }
@@ -147,7 +140,6 @@ nav ul li {
 nav ul li a {
   text-decoration: none;
   font-weight: bold;
-  color: #333;
   color: #EEE;
 }
 
@@ -165,13 +157,7 @@ section {
   width: 100%;
 }
 
-#about section,
-#works section,
-#contact section{
-  background: #fff;
-}
-
-.container{
+.container {
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
@@ -186,14 +172,14 @@ footer {
   width: 100%;
 }
 
-/*タブレット用*/
+/* タブレット用 */
 @media all and (min-width: 600px) {
   .container {
     grid-template-columns: 1fr 1fr;
   }
 }
 
-/*コンピュータ用*/
+/* コンピュータ用 */
 @media all and (min-width: 1025px) {
   header h1 {
     font-size: 4rem;
@@ -226,74 +212,81 @@ footer {
   }
 }
 
-.intro{
-    background: transparent;
-    text-align: center;
-    padding: 80px 20px;
-}
-
-.intro h2{
-    font-size: 2rem;
-    letter-spacing: 0.1em;
-    margin-bottom: 10px;
-}
-
-.intro p{
-    font-size: 1rem;
-    letter-spacing: 0.15em;
-}
-.intro{
-  background: transparent;
+/* イントロダクション（重複を統合） */
+.intro {
+  background: transparent !important;
   text-align: center;
   padding: 120px 20px;
 }
 
-.intro h2{
+.intro h2 {
   font-size: 2rem;
   font-weight: normal;
   line-height: 2;
   letter-spacing: .1em;
+  color: #472b16;
 }
 
-.carousel{
-  gap:80px;
+.intro p {
+  font-size: 1rem;
+  letter-spacing: 0.15em;
 }
 
-.carousel-container{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  width:100%;
-  max-width:900px;
-  overflow:visible;
+/* ==============================================
+   カルーセル（スライダー）の調整
+============================================== */
+.carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  background: transparent !important;
+  overflow: hidden; /* はみ出た画像を隠す */
+  width: 100%;
 }
 
-.carousel-img{
-  width:150px;
-  height:210px;
-  object-fit:contain;
-  margin:0;
+/* スライダーの画像を1列に並べて動かすための枠 */
+.slider4 {
+  display: flex;
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+  max-width: 900px;
 }
 
-.carousel-img.center{
-  width:260px;
-  height:340px;
+/* 画像1枚ずつの親要素（1枚表示させる場合の設定） */
+.slider4 > div {
+  min-width: 100%; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.carousel-img.side{
-  opacity:.8;
-  transform:scale(.9);
-  z-index:2;
+.carousel-img {
+  width: 100%;
+  max-width: 600px; /* 画像が大きすぎないように最大幅を設定 */
+  height: auto;
+  object-fit: contain;
+  margin: 0;
 }
 
-.arrow{
-  background:none;
-  border:none;
-  font-size:30px;
-  cursor:pointer;
+/* 矢印ボタン */
+.arrow {
+  background: none;
+  border: none;
+  font-size: 40px;
+  cursor: pointer;
+  color: #472b16; /* 矢印の色を見やすい茶色に */
+  z-index: 10;
 }
 
-.dots span{
+/* ドットナビゲーション */
+.dots {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.dots span {
   width: 12px;
   height: 12px;
   background: #ccc;
@@ -303,63 +296,56 @@ footer {
   cursor: pointer;
 }
 
-.dots span.active{
+.dots span.active {
   background: #666;
 }
 
-.carousel{
-  background: transparent !important;
-}
-
-.intro{
-  background: transparent !important;
-}
 .about {
   background: transparent;
 }
-/* モンチッチページ */
 
-#monchhichi section{
+/* モンチッチページ */
+#monchhichi section {
   background: #fff;
 }
 
-.mon-card{
-  text-align:center;
-  padding:20px;
-  border-radius:20px;
-  box-shadow:0 5px 15px rgba(0,0,0,.1);
+.mon-card {
+  text-align: center;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,.1);
 }
 
-.mon-card img{
-  width:100%;
-  max-width:250px;
-  height:auto;
-  margin-bottom:15px;
+.mon-card img {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  margin-bottom: 15px;
 }
 
-.mon-card h3{
-  color:#3c220e;
-  margin-bottom:10px;
+.mon-card h3 {
+  color: #3c220e;
+  margin-bottom: 10px;
 }
 
-.intro h2{
-  color:#472b16;
+.back-btn {
+  text-align: center;
+  margin-top: 50px;
 }
 
-.back-btn{
-  text-align:center;
-  margin-top:50px;
+.back-btn a {
+  display: inline-block;
+  padding: 12px 30px;
+  background: #333;
+  color: #fff;
+  border-radius: 30px;
+  transition: .3s;
 }
 
-.back-btn a{
-  display:inline-block;
-  padding:12px 30px;
-  background:#333;
-  color:#fff;
-  border-radius:30px;
-  transition:.3s;
+.back-btn a:hover {
+  transform: translateY(-3px);
 }
 
-.back-btn a:hover{
-  transform:translateY(-3px);
+.about-content {
+  text-align: center;
 }
