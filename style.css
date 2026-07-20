@@ -436,3 +436,13 @@ footer {
   font-weight: normal;
   letter-spacing: 0.05em;
 }
+/* ==============================================
+   モンチッチページのメインビジュアル画像サイズ調整（削らない版）
+============================================== */
+#monchhichi header picture img {
+  width: 100%;
+  max-height: 500px;   /* 画像の最大の高さです。お好みで 400px や 600px に調整してください */
+  object-fit: contain; /* 画像を一切削らず、全体が表示されるように縮小する設定 */
+  margin: 0 auto;      /* 画像を真ん中に配置する */
+  display: block;
+}
