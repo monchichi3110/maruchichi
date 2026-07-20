@@ -236,80 +236,7 @@ footer {
   text-align: center;
 }
 
-/* ==============================================
-   カルーセル（スライダー）の調整
-
-.carousel {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
-  background: transparent !important;
-  overflow: hidden;
-  width: 100%;
-}
-
-.slider4 {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-  width: 100%;
-  max-width: 900px;
-}
-
-.slider4 > div {
-  min-width: 100%; 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.carousel-img {
-  width: 100%;
-  max-width: 600px;
-  height: auto;
-  object-fit: contain;
-  margin: 0;
-}
-
-.arrow {
-  background: none;
-  border: none;
-  font-size: 40px;
-  cursor: pointer;
-  color: #472b16;
-  z-index: 10;
-}
-
-.dots {
-  text-align: center;
-  margin-top: 15px;
-  width: 100%;
-}
-
-.dots span {
-  width: 12px;
-  height: 12px;
-  background: #ccc;
-  border-radius: 50%;
-  display: inline-block;
-  margin: 0 5px;
-  cursor: pointer;
-}
-
-.dots span.active {
-  background: #666;
-}
-
-.about {
-  background: transparent;
-}
-
-============================================== */
-
 /* モンチッチページ */
-#monchhichi section {
-  background: #fff;
-}
 
 .mon-card {
   text-align: center;
@@ -350,4 +277,162 @@ footer {
 
 .about-content {
   text-align: center;
+}
+/* ABOUTページ全体のテキストとコンテンツを中央に寄せる */
+#about main section {
+  text-align: center;
+}
+
+/* Favoriteのリスト（箇条書き）のポッチと文字を左揃えのまま中央に寄せる */
+#about section ul {
+  display: inline-block;
+  text-align: left;
+}
+
+/* Hobby & Skillのカードを中央に寄せる */
+#about .card {
+  margin: 10px auto;
+  max-width: 400px; /* カードの見栄えに合わせた幅（お好みで調整してください） */
+}
+/* ABOUTページの名前（Itsuki Mariishi）を大きくする */
+.about-content h2 {
+  font-size: 4rem; /* 数字を大きくするとさらに巨大になります（例: 4rem, 50px など） */
+  margin-bottom: 15px; /* 名前と下の「芸術学部」の間の余白（お好みで調整してください） */
+}
+
+/* ==============================================
+   CONTACTページ用のSNSレイアウト（グループ分け対応）
+============================================== */
+.sns-section {
+  text-align: left !important;
+  max-width: 800px;            
+  margin: 60px auto;           
+}
+
+/* 一番上の大きな「SNS」の題名 */
+.sns-section h2 {
+  text-align: left;
+  font-size: 2.5rem;           
+  border-bottom: 3px solid #422610; 
+  padding-bottom: 8px;
+  margin-bottom: 40px;         
+}
+
+/* Instagram、YouTubeごとのグループ */
+.sns-group {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;                   /* アカウント同士の間隔 */
+  margin-bottom: 50px;         /* インスタとYouTubeの間の大きな隙間 */
+}
+
+/* 「Instagram」「YouTube」という小見出し */
+.sns-type-title {
+  font-size: 1.6rem;
+  color: #422610;
+  background-color: rgba(66, 38, 16, 0.08); /* ほんのり背景色をつけて分かりやすく */
+  padding: 8px 15px;
+  border-left: 5px solid #422610;            /* 左側に縦線をプラス */
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+/* 左にアイコン、右に情報の横並び */
+.sns-item {
+  display: flex;
+  align-items: center; 
+  gap: 35px;           
+  padding-left: 15px;  /* 小見出しの縦線に合わせて少し右にずらす */
+}
+
+/* アイコンを大きく丸くする設定 */
+.sns-icon {
+  width: 140px;        
+  height: 140px;       
+  flex-shrink: 0;      
+  border-radius: 50%;  
+  overflow: hidden;
+  background-color: #e0e0e0; 
+}
+
+.sns-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   
+}
+
+/* 右側のテキスト情報 */
+.sns-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;            
+}
+
+/* 各アカウントのニックネーム・チャンネル名 */
+.sns-info h4 {
+  font-size: 1.8rem;   
+  color: #422610;
+}
+
+/* アカウントID（@〜） */
+.sns-info .account-id {
+  font-size: 1.2rem;   
+  color: #777;
+}
+
+/* リンクボタンの見た目 */
+.sns-link {
+  font-size: 1.2rem;   
+  color: #b5865d;      
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.sns-link:hover {
+  color: #422610;
+}
+/* ==============================================
+   WORKS & モンチッチ ギャラリー調整
+============================================== */
+/* ギャラリー全体の配置調整 */
+.work-gallery {
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+/* 各画像カードの見た目（角丸と中央揃え） */
+.work-card, .mon-card {
+  text-align: center;
+  background: transparent; /* 背景を透明に */
+}
+
+/* 画像を囲むリンクの設定 */
+.work-card a, .mon-card a {
+  display: block;
+  overflow: hidden;
+  border-radius: 12px; /* 画像の角を少し丸くする */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* ほんのり影をつけて立体感をもたせる */
+  transition: transform 0.3s ease; /* マウスを乗せた時のアニメーション */
+}
+
+/* マウスを画像に乗せたときに少し浮き上がる演出 */
+.work-card a:hover, .mon-card a:hover {
+  transform: translateY(-5px);
+}
+
+/* 画像自体のサイズ感を統一する */
+.work-card img, .mon-card img {
+  width: 100%;
+  height: 220px;       /* 縦幅を揃える（お好みの高さに変えてもOK） */
+  object-fit: cover;   /* 画像が歪まないように切り抜いてフィットさせる */
+  display: block;
+}
+
+/* 画像の下にある作品名・タイトルの文字 */
+.work-card h3, .mon-card h3 {
+  font-size: 1.1rem;
+  color: #422610;
+  margin-top: 15px;    /* 画像との隙間 */
+  font-weight: normal;
+  letter-spacing: 0.05em;
 }
