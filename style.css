@@ -423,8 +423,9 @@ footer {
 /* 画像自体のサイズ感を統一する */
 .work-card img, .mon-card img {
   width: 100%;
-  height: 220px;       /* 縦幅を揃える（お好みの高さに変えてもOK） */
-  object-fit: cover;   /* 画像が歪まないように切り抜いてフィットさせる */
+  height: auto;          /* 💡高さを自動にして画像の比率を保つ */
+  max-height: 300px;     /* 💡大きくなりすぎないように最大の高さを指定（お好みで調整OK） */
+  object-fit: contain;  /* 💡切らずに全形を収める設定 */
   display: block;
 }
 
@@ -436,13 +437,72 @@ footer {
   font-weight: normal;
   letter-spacing: 0.05em;
 }
+
 /* ==============================================
-   モンチッチページのメインビジュアル画像サイズ調整（削らない版）
+   1段に1つずつ・中央揃えレイアウト（動画＆サイトリンク）
 ============================================== */
-#monchhichi header picture img {
+
+/* セクション全体の余白設定 */
+.single-column-section {
+  max-width: 700px; /* 見やすいように幅を700pxに制限（お好みの幅に調整可） */
+  margin: 50px auto; /* 上下に余白を空け、左右中央揃えにする */
+  padding: 0 20px;
+  text-align: center;
+}
+
+.single-column-section h2 {
+  font-size: 1.5rem;
+  color: #422610;
+  margin-bottom: 30px;
+  letter-spacing: 0.1em;
+}
+
+/* 各コンテンツ（動画・画像カード）を1つずつ縦並び＆中央配置 */
+.media-item {
+  margin-bottom: 40px; /* 各コンテンツの間のすきま */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 左右中央揃え */
+}
+
+/* 動画プレイヤーのスタイル */
+.media-item video {
   width: 100%;
-  max-height: 500px;   /* 画像の最大の高さです。お好みで 400px や 600px に調整してください */
-  object-fit: contain; /* 画像を一切削らず、全体が表示されるように縮小する設定 */
-  margin: 0 auto;      /* 画像を真ん中に配置する */
+  max-width: 650px;
+  border-radius: 12px; /* 少し角丸にする */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* ほんのり影をつける */
+  outline: none;
+}
+
+/* サイトリンク画像のスタイル */
+.media-item.site-card a {
   display: block;
+  width: 100%;
+  max-width: 650px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* マウスを乗せた時に浮き上がるアニメーション */
+.media-item.site-card a:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* サイトリンクの画像が歪まないように調整 */
+.media-item.site-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* 各タイトルの文字スタイル */
+.media-item h3 {
+  font-size: 1.1rem;
+  color: #422610;
+  margin-top: 15px;
+  font-weight: normal;
 }
