@@ -247,9 +247,11 @@ footer {
 
 .mon-card img {
   width: 100%;
-  max-width: 250px;
+  max-width: 100%;      /* 💡枠いっぱいに広げるか、真ん中に寄せる */
   height: auto;
-  margin-bottom: 15px;
+  margin: 0 auto 15px;  /* 💡「0 auto」で左右中央揃えにする */
+  display: block;       /* 💡ブロック要素にして中央揃えを効かせる */
+  object-fit: contain;
 }
 
 .mon-card h3 {
